@@ -14,7 +14,7 @@ public class so2 {
      Socket socket = new Socket(host, port);
      // 建立连接后获得输出流
      OutputStream outputStream = socket.getOutputStream();
-     String message = "你好  yiwangzhibujian";
+     String message = "你好 Gamejoye";
      //首先需要计算得知消息的长度
      byte[] sendBytes = message.getBytes("UTF-8");
      //然后将消息的长度优先发送出去
@@ -23,14 +23,13 @@ public class so2 {
      //然后将消息再次发送出去
      outputStream.write(sendBytes);
      outputStream.flush();
-     //==========此处重复发送一次，实际项目中为多个命名，此处只为展示用法
      message = "第二条消息";
      sendBytes = message.getBytes("UTF-8");
      outputStream.write(sendBytes.length >>8);
      outputStream.write(sendBytes.length);
      outputStream.write(sendBytes);
      outputStream.flush();
-     //==========此处重复发送一次，实际项目中为多个命名，此处只为展示用法
+     //此处重复发送一次，实际项目中为多个命名，此处只为展示用法
      message = "the third message!";
      sendBytes = message.getBytes("UTF-8");
      outputStream.write(sendBytes.length >>8);
